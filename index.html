@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="shortcut icon" href="HeartYarn.png" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timeline">
+
+  <div class="container left">
+    <div class="content">
+      <h2>Instruction</h2>
+      <p>Click the Sparkles "✨" or Day number (Ex. "Day 001") to start reading the Thread.</p>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <h2>The Girl I want to love</h2>
+      <p>Written by: Oswald</p>
+      <p>Dedicated to: Ms. Andrea Joy</p>
+      <p>About: Since the Day I met her</p>
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2 href="#" onclick="typeWriter1()">Day 001: ✨</h2>
+      <p id="demo1">December 15, 2021 – 2:03 PM :: </p>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <h2 onclick="typeWriter2()">Day 002✨</h2>
+      <p id="demo2">December 16, 2021 – 6:12 AM :: </p>
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2 onclick="typeWriter3()">Day 003✨</h2>
+      <p id="demo3">December 17, 2021 – 8:10 AM :: </p>
+    </div>
+  </div>
+
+<!--
+  <div class="container right">
+    <div class="content">
+      <h2 onclick="typeWriter4()">✨</h2>
+      <p id="demo4">></p>
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2 onclick="typeWriter5()">✨</h2>
+      <p id="demo5">></p>
+    </div>
+  </div> -->
+
+</body>
+
+
+
+
+
+<script>
+
+var i1 = 0;
+var txt1 = 'Wednesday nung araw na yun, nag Lilitmatch ako kasi bored na bored na ako sa buhay ko, merong Soul Game section sa Litmatch na merong 10 Match Limit per day na kung saan pwede ka makakilala ng random strangers na kapareho ng interest mo base sa nilagay mong details sa Litmatch Account mo. Sa panghuling match ko sa araw na yun, may nakachat akong makulit, este nakuha agad loob ko HAHAHAHA! Sa Hi nya palang nun parang may something na hindi agad ako makasagot, kaya nung natauhan ako sumagot ako agad, until we both like each other na, kasi she likes me a lot daw HAHAHAHAHAHAHA. May OC pala sya that time pero panay usap namin, hanggang sa naopen ko yung topic na ex(eww), nag kwentuhan kami about sa ex naming dalawa, pareho kami ng mga naranasan sa ex namin, parehong masakit yung naging dulo. Habang nag kukwento sya naaamaza ako sakanya, napapatanong na paano kung sya yung naging partner ko dati? Ganun din kaya magiging dulo? Pero napadasal ako sa isang bagay, na sana sya nalang, na sana maging kami, ang selfish pero totoo, naiisip ko n asana sya nalang… Nag bigay sya ng mga salitang pinaniwalaan ko, pangakong panghahawakan ko, nagulat ako kung bakit naniwala pa ako dun, sa sarili ko nga hindi na ako naniniwala tapos dun sa mga sinabi nya naniwala ako? Ewan ko kung bakit pero ginusto ko maniwala, naging sobrang interesado ko sakanya na to the point na lahat ng malalaman ko about her inililistdown ko, as a reminder for me na ito yung taong nakapag balik ng tiwala ko sa mundo. Naeexcite ako sa bawat chat nya, hanggang sa mag gabi na, bigla akong natakot na baka after this night mawala na sya, grabe takot ko nun HAHAHA, pero cinomfort nya ako hanggang sa maging comfortable ako na dun ako sa promise nya mag focus hindi sa takot ko na hindi naman nya gagawin, tapos panay comfort nya saakin eh sya naman pala may iniisip din na mabigat sa dibdib, hindi ko gusto na ako natutulog ng mahimbing tapos sakanya may mga bumabagabag, so kinulit ko sya mag kwento HAHAHA, nag kwento sya, ramdam ko yung takot at sakit, gusto ko syang yakapin that time, wala akong masabi, gusto ko lang syang yakapin para makalma… Hanggang sa naging OK sya, sobrang saya kong natulog nun, sobrang comfortable, na dati halos para akong laging binabangungot na mayat maya ang gising.';
+var speed1 = 30;
+function typeWriter1() {
+  if (i1 < txt1.length) {
+    document.getElementById("demo1").innerHTML += txt1.charAt(i1);
+    i1++;
+    setTimeout(typeWriter1, speed1);
+  }
+}
+
+var i2 = 0;
+var txt2 = 'Thursday, nag alarm ako pero hindi ako bumanong agad HAHAHA, pagkagising ko that time sya agad yung naisip ko, kaya chinat ko agad sya at tsaka lang ako nag handa para sa OC naming. Ilang oras ang lumipas pero hindi ako makafocus sa IT Summit naming, nakabantay ako sa convo naming para once na mag online sya o reply, makasagot agada ko HAHAHA. Ilang oras pa yung lumipas pero offline parin sya, kinabahan na ako na baka may kung anong nangyari, may problema o ayun na yung naiisip ko na kinakatakot ko hahaha, ilang beses ko naisip na mag text para maaware sya, kaso baka hindi lang pansinin. Lunch na that time at alalang alala na ako, inabot ata ako ng oras sa lunch ko kakaisip sakanya, until nung natapos ako mag lunch, naisip ko sya isearch habang may OC at nagawa ng activities, hindi ko mahanap yung Social Media Accounts nya using yung mga info na alam ko about sakanya, pero hindi ako sumuko HAHAHA, I tried to match her pictures sa picture nung mga nahanap ko, I looked in her eyes pero iba talaga eh huhu, until few hours yung lumipas sa pagkabaliw at kakahanap sakanya, naisipan ko na talaga syang tawagan, out of 9 calls, dalawa lang yung nag ring, since morning hindi ko sya tinigilan ichat baka sakaling mag open sya HAHAHA, then sa pang 10 na call ko, napatingin ako sa taas kahit may dingding HAHAHA, tapos sabi na “Last one nalang talaga, baka iniiwasan na ako nito, maybe deserve ko ‘to, kung hindi nya sasagutin wala na”, tapos pinindot ko na yung call habang nag aayos ng mga gamit ko, gulat na gulat ako nung sinagot nya HAHAHAHAHAHAHA, masaya ako na sobra yung gulat kasi sinagot nya, sobrang napangiti ako nun as in, yung buong araw akong takot at masungit, biglang naging sobrang ngiti dahil lang sa sinagot nya tawag ko HAHAHAHAHA, tapos sumakto pa na yung boses nya nakakakalmaaaaaaaaaaaaaaa HAHAHAHAHAHAHAHAHA, sobrang nakakasayaaaaaaaaa! ! ! Tapos nun naramdaman ko pa na mahalaga ako sakanya kasi nga nag paload pa sya para makareply sa text kooo huhu, nag usap kami sa text nun dirediretso, tapos nung gabi na, nasabi ko na gusto ko syang ligawan, tapos she called me as her suitor, nanlambot ako nun sa sayaaaaaaaaaaa, imagine pumayag yung ideal girl na ligawan mo sya, para na akong sinagot sa saya eh HAHAHA, kasi naman,  big step na din yun para sa dasal ko na sana sya na eh, sobra yung pagkagalak ko that time, hindi ako makapaniwala na papayag sya HAHAHA, tapos nung naiisip ko na napaka ideal nya para maging akin, maganda sya physically, maganda mindset nya, maganda lahat sakanya, literal na ideal person, naiisip ko na parang impossible maging akin ‘to hahaha, she boost me up, na hindi fling, na seryoso at interesado din sya saakin, na pareho kami, ang say ana meron pa naging ganun saakin, na meron pang ganun.';
+var speed2 = 30;
+function typeWriter2() {
+  if (i2 < txt2.length) {
+    document.getElementById("demo2").innerHTML += txt2.charAt(i2);
+    i2++;
+    setTimeout(typeWriter2, speed2);
+  }
+}
+
+var i3 = 0;
+var txt3 = 'Nagising ako sa mga text nya HAHAHA, tinatadtad na pala ako, pag ganun na nagigising ako kasi may nag tetext or chat naiinis ako, pero nung nakita ko na sya pala natuwa ako ng sobra HAHAHAHAHA, biglang nabuhayan ako sabay bangon eh. Yes inaamin ko nasasaktan ako sa jokes na hindi ako mahal kasi nga takot ako na totoo pala, baka totoo pala ganun, lalo sya pa hahaha, pero alam ko kasalanan ko na yun hindi kanya, pero kahit pa totoo yun, papatunayan ko parin sakanya na kaya ko ibigay at gawin lahat just to make her safe, happy and comfortable, sobrang attached yung pakiramdam ko sakanya. Paano kaya pag nabasa nya chats ko kahapon? Potek mangangasar ng malala ‘to HAHAHAHAHAHA. Mag pulis pala pangarap ng mahal ko, lalo akong natatakot sa safety nya eh, pero I have to support her kasi pangarap nya yun, ayaw kong sirain o pigilan yung kasiyahan at pangarap nya, kaya susuportahan ko nalang sya at tutulungan, syempre I have to assure din na magiging ligtas sya kahit ako yung kapalit. I admire her more kasi kahit sa pamangkin nya napakabait nya, hindi naman nya kasalanan kaya nasira pero ipapaayos nya, tapos ngayon biglang bibilhan nya ng bago?! Apakabait nya talagaaaaaaaaa, napaka swerte nung mga taong malalapit sakanya kasi meron silang sya, gusto ko syang maging akin dahil sa mga pwedeng ibigay nya, gusto ko sya kasi marunong syang makaintindi, makaappreciate, at mag paramdam, sobrang humahanga ako sakanya sa totoo lang, baka nga pag nag tayo ‘to ng fanclub ako mauna eh HAHAHAHAHAHA, number 1 fan! ! ! HAHAHAHAHAHA, napakaganda ng mindset nya, kaya nya nga mapaganda buhay nya kahit sya lang mag isa alam ko eh, the way she think, the way she act, the way she decide, sobrang ganda, samantalang ako dami kopa iniisip na logical reason tapos iisipin ko pa ibang possibilities HAHAHAHA, tapos ending hindi ako nag tetake risk masyado kaya hindi din ganun kaano ending. The heck, gagastusan ako nito seryoso? Ako manliligaw mo tapos ikaw gagastos?! Nahihiya nga ako kasi wala akong pera tapos ikaw binabalak mong regaluhan ako ng ganyan na mahal?! Nahihiya ako na nanlalambot puso eh, hiya kasi ako yung manliligaw, nanlalambot puso kasi alam mo ba na ikaw yung unang mag reregalo saakin pagnagkataon? Bukod sa mga ninong at ninang ko, wala na nagbibigay ng regalo saakin tuwing Christmas, sa Birthday ko nga never pa ako nakareceive ng gift kahit galing sa Fam ko eh HAHAHA, nakakaluha kasi merong nakaisip na mabigyan ako alam mo yun? Pero OK na ako dun sa naisip mo lang hoy! HAHAHAHAHA, wag mo na balakin, para sayo yang pera mo, sarili mo bigyan mo!';
+var speed3 = 30;
+function typeWriter3() {
+  if (i3 < txt3.length) {
+    document.getElementById("demo3").innerHTML += txt3.charAt(i3);
+    i3++;
+    setTimeout(typeWriter3, speed3);
+  }
+}
+
+var i4 = 0;
+var txt4 = 'Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta Basta.';
+var speed4 = 50;
+function typeWriter4() {
+  if (i4 < txt4.length) {
+    document.getElementById("demo4").innerHTML += txt4.charAt(i4);
+    i4++;
+    setTimeout(typeWriter4, speed4);
+  }
+}
+
+var i5 = 0;
+var txt5 = 'Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan Ewan.';
+var speed5 = 50;
+function typeWriter5() {
+  if (i5 < txt5.length) {
+    document.getElementById("demo5").innerHTML += txt5.charAt(i5);
+    i5++;
+    setTimeout(typeWriter5, speed5);
+  }
+}
+
+</script>
+
+</html>
